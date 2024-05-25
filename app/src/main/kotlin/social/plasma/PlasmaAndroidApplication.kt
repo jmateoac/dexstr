@@ -105,7 +105,10 @@ class PlasmaAndroidApplication : Application(), ImageLoaderFactory, Configuratio
 
     override fun newImageLoader(): ImageLoader = imageLoaderFactory.newImageLoader()
 
-    override fun getWorkManagerConfiguration(): Configuration = Configuration.Builder()
-        .setWorkerFactory(workerFactory)
-        .build()
+
+    override val workManagerConfiguration: Configuration by lazy {
+        Configuration.Builder()
+            .setWorkerFactory(workerFactory)
+            .build()
+    }
 }

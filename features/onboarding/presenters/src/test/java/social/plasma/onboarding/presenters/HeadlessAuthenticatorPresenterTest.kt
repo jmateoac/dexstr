@@ -3,7 +3,9 @@ package social.plasma.onboarding.presenters
 import app.cash.nostrino.crypto.SecKeyGenerator
 import com.google.common.truth.Truth.assertThat
 import com.slack.circuit.test.FakeNavigator
+import com.slack.circuit.test.FakeNavigator.ResetRootEvent
 import com.slack.circuit.test.test
+import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Before
@@ -18,7 +20,7 @@ import social.plasma.shared.repositories.fakes.FakeAccountStateRepository
 
 class HeadlessAuthenticatorPresenterTest {
     private val accountStateRepository: AccountStateRepository = FakeAccountStateRepository()
-    private val navigator = FakeNavigator()
+    private val navigator = FakeNavigator(HeadlessAuthenticator())
     private val getAuthStatus = GetAuthStatus(accountStateRepository)
 
     private val presenter: HeadlessAuthenticatorPresenter
@@ -49,7 +51,12 @@ class HeadlessAuthenticatorPresenterTest {
         presenter.test {
             awaitItem()
 
-            assertThat(navigator.awaitResetRoot()).isEqualTo(HomeScreen)
+            assertThat(navigator.awaitResetRoot()).isEqualTo(
+                ResetRootEvent(
+                    newRoot = HomeScreen,
+                    oldScreens = persistentListOf(HeadlessAuthenticator())
+                )
+            )
         }
     }
 
@@ -60,7 +67,12 @@ class HeadlessAuthenticatorPresenterTest {
         presenter.test {
             awaitItem()
 
-            assertThat(navigator.awaitResetRoot()).isEqualTo(HomeScreen)
+            assertThat(navigator.awaitResetRoot()).isEqualTo(
+                ResetRootEvent(
+                    newRoot = HomeScreen,
+                    oldScreens = persistentListOf(HeadlessAuthenticator())
+                )
+            )
         }
     }
 
@@ -69,7 +81,12 @@ class HeadlessAuthenticatorPresenterTest {
         presenter.test {
             awaitItem()
 
-            assertThat(navigator.awaitResetRoot()).isEqualTo(LoginScreen)
+            assertThat(navigator.awaitResetRoot()).isEqualTo(
+                ResetRootEvent(
+                    newRoot = LoginScreen,
+                    oldScreens = persistentListOf(HeadlessAuthenticator())
+                )
+            )
         }
     }
 
@@ -81,7 +98,12 @@ class HeadlessAuthenticatorPresenterTest {
             presenter(args).test {
                 awaitItem()
 
-                assertThat(navigator.awaitResetRoot()).isEqualTo(HomeScreen)
+                assertThat(navigator.awaitResetRoot()).isEqualTo(
+                    ResetRootEvent(
+                        newRoot = HomeScreen,
+                        oldScreens = persistentListOf(HeadlessAuthenticator())
+                    )
+                )
                 assertThat(navigator.awaitNextScreen()).isEqualTo(LoginScreen)
             }
         }

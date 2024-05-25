@@ -1,29 +1,29 @@
 [versions]
-compileSdk = "33"
+compileSdk = "34"
 minSdk = "24"
-targetSdk = "31"
-agp = "7.4.2"
+agp = "8.4.1"
 
-accompanist = "0.30.1"
-coil = "2.3.0"
-composeCompiler = "1.4.0"
-composeBom = "2023.01.00"
-composeNavigation = "2.5.3"
-composeRuntime = "1.3.3"
-circuit = "0.8.0"
-coroutines = "1.7.1"
-coreKtx = "1.10.1"
-dagger = "2.44.2"
-exoplayer = "1.1.1"
-kotest = "5.5.4"
-kotlin = "1.8.0"
-lifecycle = "2.5.1"
-molecule = "0.7.1"
-moshi = "1.14.0"
+accompanist = "0.32.0"
+coil = "2.6.0"
+composeCompiler = "1.5.14"
+composeBom = "2024.05.00"
+composeNavigation = "2.7.7"
+composeRuntime = "1.6.7"
+circuit = "0.20.0"
+coroutines = "1.8.1"
+coreKtx = "1.13.1"
+dagger = "2.49"
+exoplayer = "1.3.1"
+kotest = "5.8.1"
+kotlin = "1.9.24"
+lifecycle = "2.8.0"
+molecule = "1.4.3"
+moshi = "1.15.1"
 nostrino = "0.0.5"
-okhttp = "5.0.0-alpha.11"
-paging = "3.2.0"
-room = "2.5.2"
+okhttp = "5.0.0-alpha.12"
+paparazzi = "1.3.4"
+paging = "3.3.0"
+room = "2.6.1"
 rxjava = "2.2.21"
 scarlet = "0.1.12"
 sentry = "6.21.0"
@@ -35,26 +35,26 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 molecule = { id = "app.cash.molecule", version.ref = "molecule" }
-paparazzi = { id = "app.cash.paparazzi", version = "1.2.0" }
+paparazzi = { id = "app.cash.paparazzi", version.ref = "paparazzi" }
 sentry = { id = "io.sentry.android.gradle", version = "3.4.2" }
 
 [libraries]
 accompanist-flowlayout = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanist" }
 accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
 accompanist-placeholder = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanist" }
-android-material = "com.google.android.material:material:1.9.0"
-android-desugaring = "com.android.tools:desugar_jdk_libs:2.0.3"
-androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.7.2" }
+android-material = "com.google.android.material:material:1.12.0"
+android-desugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.0" }
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
-androidx-hilt-navigationcompose = "androidx.hilt:hilt-navigation-compose:1.0.0"
-androidx-hilt-compiler = "androidx.hilt:hilt-compiler:1.0.0"
-androidx-hilt-workmanager = { module = "androidx.hilt:hilt-work", version = "1.0.0" }
+androidx-hilt-navigationcompose = "androidx.hilt:hilt-navigation-compose:1.2.0"
+androidx-hilt-compiler = "androidx.hilt:hilt-compiler:1.2.0"
+androidx-hilt-workmanager = { module = "androidx.hilt:hilt-work", version = "1.2.0" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
 
 androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
 androidx-paging-common = { module = "androidx.paging:paging-common-ktx", version.ref = "paging" }
-androidx-paging-compose = { module = "androidx.paging:paging-compose", version = "3.2.0" }
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version = "3.3.0" }
 
 androidx-room-common = { module = "androidx.room:room-common", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
@@ -67,7 +67,7 @@ androidx-security-crypto = { module = "androidx.security:security-crypto-ktx", v
 androidx-splashscreen = "androidx.core:core-splashscreen:1.0.1"
 androidx-test-junit = "androidx.test.ext:junit:1.1.5"
 androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
-androidx-workmanager = { module = "androidx.work:work-runtime-ktx", version = "2.8.1" }
+androidx-workmanager = { module = "androidx.work:work-runtime-ktx", version = "2.9.0" }
 
 circuit-core = { module = "com.slack.circuit:circuit-foundation", version.ref = "circuit" }
 circuit-overlay = { module = "com.slack.circuit:circuit-overlay", version.ref = "circuit" }
@@ -87,7 +87,7 @@ compose-ui-uitoolingpreview = { module = "androidx.compose.ui:ui-tooling-preview
 compose-ui-util = { module = "androidx.compose.ui:ui-util" }
 compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
-compose-material3 = { module = "androidx.compose.material3:material3", version = "1.2.0-alpha02" }
+compose-material3 = { module = "androidx.compose.material3:material3", version = "1.2.1" }
 compose-material-materialicons = { module = "androidx.compose.material:material-icons-extended" }
 compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "composeRuntime" }
 
@@ -98,15 +98,15 @@ exoplayer-hls = { module = "androidx.media3:media3-exoplayer-hls", version.ref =
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
 
-icu4j = { module = "com.ibm.icu:icu4j", version = "72.1" }
-jsoup = "org.jsoup:jsoup:1.15.3"
+icu4j = { module = "com.ibm.icu:icu4j", version = "74.2" }
+jsoup = "org.jsoup:jsoup:1.17.2"
 junit = "junit:junit:4.13.2"
 
 kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 
-leakcanary = "com.squareup.leakcanary:leakcanary-android:2.10"
+leakcanary = "com.squareup.leakcanary:leakcanary-android:2.13"
 lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 lifecycle-viewmodelcompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 
@@ -118,7 +118,7 @@ nostrino = { module = "app.cash.nostrino:nostr-sdk", version.ref = "nostrino" }
 okhttp-core = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 okhttp-interceptor-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 okhttp-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
-
+paparazzi = { module = "app.cash.paparazzi:paparazzi", version.ref = "paparazzi" }
 rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
 
 scarlet-core = { module = "com.tinder.scarlet:scarlet", version.ref = "scarlet" }
@@ -128,14 +128,14 @@ scarlet-streamadapter-coroutines = { module = "com.tinder.scarlet:stream-adapter
 scarlet-streamadapter-rxjava = { module = "com.tinder.scarlet:stream-adapter-rxjava2", version.ref = "scarlet" }
 scarlet-websocket-okhttp = { module = "com.tinder.scarlet:websocket-okhttp", version.ref = "scarlet" }
 
-secp256k1-android = "fr.acinq.secp256k1:secp256k1-kmp-jni-android:0.9.0"
-secp256k1-jvm-jni = "fr.acinq.secp256k1:secp256k1-kmp-jni-jvm:0.9.0"
-secp256k1-jvm = "fr.acinq.secp256k1:secp256k1-kmp-jvm:0.9.0"
+secp256k1-android = "fr.acinq.secp256k1:secp256k1-kmp-jni-android:0.15.0"
+secp256k1-jvm-jni = "fr.acinq.secp256k1:secp256k1-kmp-jni-jvm:0.15.0"
+secp256k1-jvm = "fr.acinq.secp256k1:secp256k1-kmp-jvm:0.15.0"
 sentry = { module = "io.sentry:sentry-android", version.ref = "sentry" }
-slf4j-simple = "org.slf4j:slf4j-simple:2.0.3"
+slf4j-simple = "org.slf4j:slf4j-simple:2.0.7"
 timber = "com.jakewharton.timber:timber:5.0.1"
 touchimageview = "com.github.MikeOrtiz:TouchImageView:3.2.1"
-testparameterinjector = "com.google.testparameterinjector:test-parameter-injector:1.10"
+testparameterinjector = "com.google.testparameterinjector:test-parameter-injector:1.15"
 testparameterinjector-junit5 = "com.google.testparameterinjector:test-parameter-injector-junit5:1.10"
-truth = "com.google.truth:truth:1.1.3"
-turbine = "app.cash.turbine:turbine:0.12.1"
+truth = "com.google.truth:truth:1.4.2"
+turbine = "app.cash.turbine:turbine:1.1.0"

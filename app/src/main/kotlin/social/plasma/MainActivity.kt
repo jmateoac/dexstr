@@ -16,17 +16,16 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import com.slack.circuit.backstack.SaveableBackStack
 import com.slack.circuit.backstack.rememberSaveableBackStack
+import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.foundation.CircuitCompositionLocals
-import com.slack.circuit.foundation.CircuitConfig
 import com.slack.circuit.foundation.NavigableCircuitContent
 import com.slack.circuit.foundation.NavigatorDefaults
-import com.slack.circuit.foundation.push
 import com.slack.circuit.foundation.rememberCircuitNavigator
 import com.slack.circuit.overlay.ContentWithOverlays
 import com.slack.circuit.retained.LocalRetainedStateRegistry
 import com.slack.circuit.retained.continuityRetainedStateRegistry
 import com.slack.circuit.runtime.Navigator
-import com.slack.circuit.runtime.Screen
+import com.slack.circuit.runtime.screen.Screen
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.CoroutineScope
@@ -39,7 +38,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @Inject
-    lateinit var circuitConfig: CircuitConfig
+    lateinit var circuitConfig: Circuit
 
     @Inject
     @ActivityRetainedScoped
@@ -59,8 +58,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             PlasmaTheme(dynamicStatusBar = true) {
-                val backstack =
-                    rememberSaveableBackStack { startScreens.forEach { screen -> push(screen) } }
+                val backstack = rememberSaveableBackStack(startScreens)
                 val circuitNavigator = rememberCircuitNavigator(backstack)
 
                 val plasmaNavigator = rememberPlasmaNavigator(circuitNavigator, backstack)
@@ -105,8 +103,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
-    override fun onNewIntent(intent: Intent?) {
+    override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         val screen = getStartingScreen(intent)
         newScreenRequest.value = screen

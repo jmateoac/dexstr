@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
+
     }
 
     buildTypes {
@@ -33,26 +33,9 @@ android {
 //    composeOptions {
 //        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
 //    }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+
 }
 
 dependencies {
-    implementation("app.cash.paparazzi:paparazzi:1.2.0")
-//    implementation(platform(libs.compose.bom))
-//    implementation(libs.compose.material3)
-//    implementation(libs.compose.material.materialicons)
-//    implementation(libs.compose.ui.graphics)
-//    implementation(libs.compose.ui.ui)
-//    implementation(libs.compose.ui.uitoolingpreview)
-//    implementation(libs.compose.ui.util)
-
-//    debugImplementation(libs.compose.ui.test.manifest)
-//    debugImplementation(libs.compose.ui.uitooling)
-
-//    testImplementation(libs.junit)
-//    testImplementation(libs.testparameterinjector)
+    implementation(libs.paparazzi)
 }

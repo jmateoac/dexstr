@@ -1,6 +1,6 @@
 package social.plasma.features.feeds.screens.feed
 
-import com.slack.circuit.runtime.Screen
+import com.slack.circuit.runtime.screen.Screen
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

@@ -35,7 +35,7 @@ import social.plasma.shared.utils.fakes.FakeStringManager
 import java.time.Instant
 
 class CreatePostScreenPresenterTest {
-    private val navigator = FakeNavigator()
+    private val navigator = FakeNavigator(ComposingScreen())
     private val stringManager = FakeStringManager(
         R.string.post to "post",
         R.string.new_note to "new_note",

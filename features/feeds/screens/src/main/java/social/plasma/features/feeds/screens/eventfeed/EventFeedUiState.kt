@@ -3,7 +3,7 @@ package social.plasma.features.feeds.screens.eventfeed
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.paging.PagingData
 import com.slack.circuit.runtime.CircuitUiState
-import com.slack.circuit.runtime.Screen
+import com.slack.circuit.runtime.screen.Screen
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
 import social.plasma.models.EventModel

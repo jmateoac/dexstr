@@ -14,7 +14,7 @@ android {
     defaultConfig {
         applicationId = "social.plasma"
         minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
+
         versionCode = 30
         versionName = "0.0.30"
 
@@ -57,11 +57,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+
 }
 
 dependencies {

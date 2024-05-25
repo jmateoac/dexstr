@@ -1,7 +1,7 @@
 package social.plasma.features.feeds.ui
 
 import com.slack.circuit.runtime.CircuitContext
-import com.slack.circuit.runtime.Screen
+import com.slack.circuit.runtime.screen.Screen
 import com.slack.circuit.runtime.ui.Ui
 import com.slack.circuit.runtime.ui.ui
 import social.plasma.features.feeds.screens.eventfeed.EventFeedUiState

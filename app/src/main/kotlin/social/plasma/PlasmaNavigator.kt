@@ -4,9 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import com.slack.circuit.backstack.SaveableBackStack
-import com.slack.circuit.foundation.screen
 import com.slack.circuit.runtime.Navigator
-import com.slack.circuit.runtime.Screen
+import com.slack.circuit.runtime.screen.Screen
 import social.plasma.common.screens.AndroidScreens
 import social.plasma.common.screens.StandaloneScreen
 
@@ -15,7 +14,7 @@ class PlasmaNavigator(
     private val circuitNavigator: Navigator,
     private val backstack: SaveableBackStack,
     val openIntent: (Intent) -> Unit,
-) : Navigator {
+) : Navigator by circuitNavigator {
     private val currentScreen get() = backstack.topRecord?.screen
 
     override fun goTo(screen: Screen) {
@@ -39,13 +38,5 @@ class PlasmaNavigator(
                 }
             }
         }
-    }
-
-    override fun pop(): Screen? {
-        return circuitNavigator.pop()
-    }
-
-    override fun resetRoot(newRoot: Screen): List<Screen> {
-        return circuitNavigator.resetRoot(newRoot)
     }
 }

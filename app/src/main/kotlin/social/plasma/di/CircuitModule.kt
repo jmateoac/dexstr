@@ -1,6 +1,6 @@
 package social.plasma.di
 
-import com.slack.circuit.foundation.CircuitConfig
+import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.runtime.presenter.Presenter
 import com.slack.circuit.runtime.ui.Ui
 import dagger.Module
@@ -17,8 +17,8 @@ class CircuitModule {
     fun provideCircuit(
         presenterFactories: @JvmSuppressWildcards Set<Presenter.Factory>,
         uiFactories: @JvmSuppressWildcards Set<Ui.Factory>,
-    ): CircuitConfig {
-        return CircuitConfig.Builder()
+    ): Circuit {
+        return Circuit.Builder()
             .apply {
                 for (factory in presenterFactories) {
                     addPresenterFactory(factory)

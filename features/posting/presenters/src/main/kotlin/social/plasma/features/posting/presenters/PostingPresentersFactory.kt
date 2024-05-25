@@ -2,8 +2,8 @@ package social.plasma.features.posting.presenters
 
 import com.slack.circuit.runtime.CircuitContext
 import com.slack.circuit.runtime.Navigator
-import com.slack.circuit.runtime.Screen
 import com.slack.circuit.runtime.presenter.Presenter
+import com.slack.circuit.runtime.screen.Screen
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

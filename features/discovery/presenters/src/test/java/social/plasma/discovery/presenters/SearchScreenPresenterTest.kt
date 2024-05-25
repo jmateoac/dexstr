@@ -17,6 +17,7 @@ import social.plasma.features.discovery.screens.search.HashTagSearchSuggestionIt
 import social.plasma.features.discovery.screens.search.SearchBarUiState
 import social.plasma.features.discovery.screens.search.SearchBarUiState.LeadingIcon
 import social.plasma.features.discovery.screens.search.SearchBarUiState.TrailingIcon
+import social.plasma.features.discovery.screens.search.SearchScreen
 import social.plasma.features.discovery.screens.search.SearchSuggestionGroup
 import social.plasma.features.discovery.screens.search.SearchUiEvent
 import social.plasma.features.discovery.screens.search.SearchUiEvent.OnActiveChanged
@@ -35,7 +36,7 @@ import kotlin.coroutines.EmptyCoroutineContext
 
 
 class SearchScreenPresenterTest {
-    private val navigator = FakeNavigator()
+    private val navigator = FakeNavigator(SearchScreen)
     private val hashtagsDao = FakeHashTagDao()
     private val getPopularHashTags = GetPopularHashTags(hashtagsDao)
     private val getHashTagSuggestions = GetHashtagSuggestions(hashtagsDao)

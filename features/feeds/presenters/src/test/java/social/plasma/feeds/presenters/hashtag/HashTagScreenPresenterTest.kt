@@ -27,7 +27,7 @@ import social.plasma.shared.utils.fakes.FakeStringManager
 import kotlin.coroutines.EmptyCoroutineContext
 
 class HashTagScreenPresenterTest {
-    private val navigator = FakeNavigator()
+    private val navigator = FakeNavigator(HashTagFeedScreen(HashTag.parse("test")))
     private val stringManager = FakeStringManager(
         R.string.join to "Join",
         R.string.leave to "Leave",

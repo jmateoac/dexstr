@@ -2,8 +2,8 @@ package social.plasma.features.discovery.presenters
 
 import com.slack.circuit.runtime.CircuitContext
 import com.slack.circuit.runtime.Navigator
-import com.slack.circuit.runtime.Screen
 import com.slack.circuit.runtime.presenter.Presenter
+import com.slack.circuit.runtime.screen.Screen
 import social.plasma.features.discovery.screens.communities.CommunityListItemScreen
 import social.plasma.features.discovery.screens.communities.CommunityListScreen
 import social.plasma.features.discovery.screens.relaylist.RelayListScreen

@@ -3,7 +3,7 @@ package social.plasma.feeds.presenters.feed
 import androidx.compose.runtime.Composable
 import androidx.paging.PagingData
 import com.slack.circuit.runtime.Navigator
-import com.slack.circuit.runtime.Screen
+import com.slack.circuit.runtime.screen.Screen
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject

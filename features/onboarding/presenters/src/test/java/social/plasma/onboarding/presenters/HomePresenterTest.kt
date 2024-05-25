@@ -6,13 +6,14 @@ import com.slack.circuit.test.test
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import social.plasma.domain.observers.ObserveHasPendingNotifications
+import social.plasma.features.onboarding.screens.home.HomeScreen
 import social.plasma.features.onboarding.screens.home.HomeUiEvent.OnFabClick
 import social.plasma.features.posting.screens.ComposingScreen
 import social.plasma.shared.repositories.fakes.FakeAccountStateRepository
 import social.plasma.shared.repositories.fakes.FakeNoteRepository
 
 class HomePresenterTest {
-    private val navigator = FakeNavigator()
+    private val navigator = FakeNavigator(HomeScreen)
     private val accountStateRepository = FakeAccountStateRepository()
     private val notesRepo = FakeNoteRepository()
 

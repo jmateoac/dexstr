@@ -2,12 +2,15 @@ package social.plasma.onboarding.presenters
 
 import com.google.common.truth.Truth.assertThat
 import com.slack.circuit.test.FakeNavigator
+import com.slack.circuit.test.FakeNavigator.ResetRootEvent
 import com.slack.circuit.test.test
+import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Ignore
 import org.junit.Test
 import social.plasma.features.onboarding.screens.HeadlessAuthenticator
 import social.plasma.features.onboarding.screens.home.HomeScreen
+import social.plasma.features.onboarding.screens.login.LoginScreen
 import social.plasma.features.onboarding.screens.login.LoginUiEvent
 import social.plasma.features.onboarding.screens.login.LoginUiEvent.OnInputChange
 import social.plasma.features.onboarding.screens.login.LoginUiEvent.OnLogin
@@ -15,7 +18,7 @@ import social.plasma.shared.repositories.fakes.FakeAccountStateRepository
 
 
 class LoginPresenterTest {
-    private val navigator = FakeNavigator()
+    private val navigator = FakeNavigator(LoginScreen)
     private val accountStateRepository = FakeAccountStateRepository()
     private val presenter: LoginPresenter
         get() = LoginPresenter(
@@ -112,7 +115,12 @@ class LoginPresenterTest {
 
             awaitItem().onEvent(OnLogin)
 
-            assertThat(navigator.awaitResetRoot()).isEqualTo(HeadlessAuthenticator())
+            assertThat(navigator.awaitResetRoot()).isEqualTo(
+                ResetRootEvent(
+                    newRoot = HeadlessAuthenticator(),
+                    oldScreens = persistentListOf(LoginScreen)
+                )
+            )
             assertThat(accountStateRepository.getSecretKey()).isNotNull()
         }
     }

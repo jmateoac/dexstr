@@ -2,8 +2,8 @@ package social.plasma.profile.presenters
 
 import com.slack.circuit.runtime.CircuitContext
 import com.slack.circuit.runtime.Navigator
-import com.slack.circuit.runtime.Screen
 import com.slack.circuit.runtime.presenter.Presenter
+import com.slack.circuit.runtime.screen.Screen
 import social.plasma.features.profile.screens.ProfileScreen
 import javax.inject.Inject
 
